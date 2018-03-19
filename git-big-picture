@@ -839,7 +839,7 @@ class CommitGraph(object):
                 color = "/pastel13/%d" % case
                 yield (k, labels, color)
 
-        dot_file_lines = ['digraph {']
+        dot_file_lines = ['digraph git {\nbgcolor="transparent";\nrankdir="LR";\nnode[width=0.15,height=0.15,shape=point,fontsize=8.0,labelloc="c"];\nedge[weight=2,arrowhead=normal,arrowsize=0.5];']
         for sha_one, labels, color in label_gen():
             dot_file_lines.append('\t"%(ref)s"[label="%(label)s", color="%(color)s", style=filled];' % {
                 'ref':sha_one,
